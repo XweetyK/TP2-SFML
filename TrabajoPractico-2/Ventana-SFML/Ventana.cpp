@@ -24,23 +24,41 @@ int main()
 	gameHint.setFont(font);
 
 	ostringstream ss;
+	ostringstream ssB;
 
 	int tim = 10;
 	Text timeText;
 	timeText.setPosition(370, 5);
 	timeText.setFont(font);
 
-	Texture texture;
-	texture.loadFromFile("image.png");
+	int score=0;
+	Text scoreText;
+	scoreText.setPosition(20, 250);
+	scoreText.setFont(font);
+
+	Texture block;
+	block.loadFromFile("image.png");
 	Texture found;
 	found.loadFromFile("image2.png");
+	Texture winner;
+	winner.loadFromFile("win.png");
+	Texture loser;
+	loser.loadFromFile("lose.png");
 
 	Sprite boxes[50];
+	Sprite win;
+	win.setTexture(winner);
+	Sprite lose;
+	lose.setTexture(loser);
+
+	bool timestopper = false;
+	bool winA = false;
+	bool winB = false;
+	bool loseA = false;
 
 	for (int i = 0; i < 50; i++)
 	{
-		boxes[i].setTexture(texture);
-		boxes[i].setColor(Color(0, 255, 200));
+		boxes[i].setTexture(block);
 	}
 	for (int i = 0; i < 11; i++)
 	{
@@ -133,7 +151,7 @@ int main()
 				}
 				if (select < 50 && select > 39 && goal < 50 && goal >39)
 				{
-					cout << "Right" << endl;
+					hintText = "Hint: Right";
 					upDw = true;
 				}
 				if (upDw == false)
@@ -173,27 +191,42 @@ int main()
 			{
 				hintText = "Hint: You Found It!";
 				boxes[select].setTexture(found);
+				winA = true;
+				score += tim * 10;
+				ssB.clear();
+				ssB.str("");
+				ssB << "Score: " << score;
+				scoreText.setString(ssB.str());
 			}
 
 		}
 		for (int i = 0; i < 50; i++)
 		{
-
 			if (i == select)
 			{
 				boxes[i].setColor(sf::Color(0, 0, 255));
 			}
 			else
 			{
-				boxes[i].setColor(sf::Color(0, 255, 200));
+				boxes[i].setColor(sf::Color(255, 255, 255));
 			}
 		}
 
 		gameHint.setString(hintText);
-		if (elapsed.asSeconds()>1.0)
+		if (timestopper == false)
 		{
-			tim--;
-			elapsed = clock.restart();
+			if (elapsed.asSeconds() > 1.0)
+			{
+				tim--;
+				elapsed = clock.restart();
+			}
+		}
+		if (tim == 0) 
+		{
+			if(winA==false)
+				loseA = true;
+			if (winA == true)
+				winB = true;
 		}
 
 		ss.clear();
@@ -202,12 +235,22 @@ int main()
 		timeText.setString(ss.str());
 
 		window.clear();
+
 		for (int i = 0; i < 50; i++) //draw boxes
 		{
 			window.draw(boxes[i]);
 		}
 		window.draw(gameHint);
 		window.draw(timeText);
+		if (winB)
+		{
+			window.draw(win);
+			window.draw(scoreText);
+		}
+		if (loseA)
+		{
+			window.draw(lose);
+		}
 		window.display();
 		sleep(seconds(0.1f));
 	}
