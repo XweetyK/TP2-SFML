@@ -17,7 +17,7 @@ int main()
 
 
 	Font font;
-	font.loadFromFile("MAGNETOB.TTF");
+	font.loadFromFile("PERTILI.TTF");
 	string hintText = "Hint: ";
 	Text gameHint;
 	gameHint.setPosition(20, 5);
@@ -44,12 +44,16 @@ int main()
 	winner.loadFromFile("win.png");
 	Texture loser;
 	loser.loadFromFile("lose.png");
+	Texture fondoT;
+	fondoT.loadFromFile("fondo.png");
 
 	Sprite boxes[50];
 	Sprite win;
 	win.setTexture(winner);
 	Sprite lose;
 	lose.setTexture(loser);
+	Sprite fondo;
+	fondo.setTexture(fondoT);
 
 	bool timestopper = false;
 	bool winA = false;
@@ -204,7 +208,7 @@ int main()
 		{
 			if (i == select)
 			{
-				boxes[i].setColor(sf::Color(0, 0, 255));
+				boxes[i].setColor(sf::Color(148, 213, 255));
 			}
 			else
 			{
@@ -235,7 +239,7 @@ int main()
 		timeText.setString(ss.str());
 
 		window.clear();
-
+		window.draw(fondo);
 		for (int i = 0; i < 50; i++) //draw boxes
 		{
 			window.draw(boxes[i]);
