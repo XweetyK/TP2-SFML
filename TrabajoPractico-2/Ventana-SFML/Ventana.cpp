@@ -12,7 +12,7 @@ using namespace sf;
 
 int main()
 {
-	RenderWindow window(sf::VideoMode(530, 320), "SFML works!");
+	RenderWindow window(sf::VideoMode(530, 320), "Treasure Hunter");
 	window.setKeyRepeatEnabled(false);
 
 
