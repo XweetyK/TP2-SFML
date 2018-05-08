@@ -85,7 +85,13 @@
     <PostBuildEvent>
       <Command>copy "$(SolutionDir)SFMLx32\bin\sfml-graphics-d-2.dll" "$(OutDir)"
 copy "$(SolutionDir)SFMLx32\bin\sfml-system-d-2.dll" "$(OutDir)"
-copy "$(SolutionDir)SFMLx32\bin\sfml-window-d-2.dll" "$(OutDir)"</Command>
+copy "$(SolutionDir)SFMLx32\bin\sfml-window-d-2.dll" "$(OutDir)"
+copy "$(SolutionDir)Ventana-SFML\image.png" "$(OutDir)"
+copy "$(SolutionDir)Ventana-SFML\image2.png" "$(OutDir)"
+copy "$(SolutionDir)Ventana-SFML\win.png" "$(OutDir)"
+copy "$(SolutionDir)Ventana-SFML\lose.png" "$(OutDir)"
+copy "$(SolutionDir)Ventana-SFML\fondo.png" "$(OutDir)"
+copy "$(SolutionDir)Ventana-SFML\PERTILI.TTF" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -103,7 +109,13 @@ copy "$(SolutionDir)SFMLx32\bin\sfml-window-d-2.dll" "$(OutDir)"</Command>
     <PostBuildEvent>
       <Command>copy "$(SolutionDir)SFMLx64\bin\sfml-graphics-d-2.dll" "$(OutDir)"
 copy "$(SolutionDir)SFMLx64\bin\sfml-system-d-2.dll" "$(OutDir)"
-copy "$(SolutionDir)SFMLx64\bin\sfml-window-d-2.dll" "$(OutDir)"</Command>
+copy "$(SolutionDir)SFMLx64\bin\sfml-window-d-2.dll" "$(OutDir)"
+copy "$(SolutionDir)Ventana-SFML\image.png" "$(OutDir)"
+copy "$(SolutionDir)Ventana-SFML\image2.png" "$(OutDir)"
+copy "$(SolutionDir)Ventana-SFML\win.png" "$(OutDir)"
+copy "$(SolutionDir)Ventana-SFML\lose.png" "$(OutDir)"
+copy "$(SolutionDir)Ventana-SFML\fondo.png" "$(OutDir)"
+copy "$(SolutionDir)Ventana-SFML\PERTILI.TTF" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -127,8 +139,12 @@ copy "$(SolutionDir)SFMLx64\bin\sfml-window-d-2.dll" "$(OutDir)"</Command>
       <AdditionalOptions>/ENTRY:"mainCRTStartup" %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PostBuildEvent>
-      <Command>
-      </Command>
+      <Command>copy "$(SolutionDir)Ventana-SFML\image.png" "$(OutDir)"
+copy "$(SolutionDir)Ventana-SFML\image2.png" "$(OutDir)"
+copy "$(SolutionDir)Ventana-SFML\win.png" "$(OutDir)"
+copy "$(SolutionDir)Ventana-SFML\lose.png" "$(OutDir)"
+copy "$(SolutionDir)Ventana-SFML\fondo.png" "$(OutDir)"
+copy "$(SolutionDir)Ventana-SFML\PERTILI.TTF" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -152,8 +168,12 @@ copy "$(SolutionDir)SFMLx64\bin\sfml-window-d-2.dll" "$(OutDir)"</Command>
       <AdditionalOptions>/ENTRY:"mainCRTStartup" %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PostBuildEvent>
-      <Command>
-      </Command>
+      <Command>copy "$(SolutionDir)Ventana-SFML\image.png" "$(OutDir)"
+copy "$(SolutionDir)Ventana-SFML\image2.png" "$(OutDir)"
+copy "$(SolutionDir)Ventana-SFML\win.png" "$(OutDir)"
+copy "$(SolutionDir)Ventana-SFML\lose.png" "$(OutDir)"
+copy "$(SolutionDir)Ventana-SFML\fondo.png" "$(OutDir)"
+copy "$(SolutionDir)Ventana-SFML\PERTILI.TTF" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
