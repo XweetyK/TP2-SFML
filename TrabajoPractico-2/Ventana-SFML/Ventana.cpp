@@ -1,3 +1,7 @@
+#ifdef _DEBUG
+	#include <vld.h>
+#endif 
+
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <ctime>

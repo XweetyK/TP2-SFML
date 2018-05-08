@@ -74,12 +74,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)SFMLx32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)SFMLx32\include;$(SolutionDir)VLD\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(SolutionDir)SFMLx32\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;opengl32.lib;freetype.lib;jpeg.lib;winmm.lib;gdi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)SFMLx32\lib;$(SolutionDir)VLD\lib\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;opengl32.lib;freetype.lib;jpeg.lib;winmm.lib;gdi32.lib;vld.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>NotSet</SubSystem>
     </Link>
     <PostBuildEvent>
@@ -91,7 +91,8 @@ copy "$(SolutionDir)Ventana-SFML\image2.png" "$(OutDir)"
 copy "$(SolutionDir)Ventana-SFML\win.png" "$(OutDir)"
 copy "$(SolutionDir)Ventana-SFML\lose.png" "$(OutDir)"
 copy "$(SolutionDir)Ventana-SFML\fondo.png" "$(OutDir)"
-copy "$(SolutionDir)Ventana-SFML\PERTILI.TTF" "$(OutDir)"</Command>
+copy "$(SolutionDir)Ventana-SFML\PERTILI.TTF" "$(OutDir)"
+copy "$(SolutionDir)VLD\bin\Win32" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -99,11 +100,11 @@ copy "$(SolutionDir)Ventana-SFML\PERTILI.TTF" "$(OutDir)"</Command>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)SFMLx64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)SFMLx64\include;$(SolutionDir)VLD\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(SolutionDir)SFMLx64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;opengl32.lib;freetype.lib;jpeg.lib;winmm.lib;gdi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)SFMLx64\lib;$(SolutionDir)VLD\lib\Win64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;opengl32.lib;freetype.lib;jpeg.lib;winmm.lib;gdi32.lib;vld.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>NotSet</SubSystem>
     </Link>
     <PostBuildEvent>
@@ -115,7 +116,8 @@ copy "$(SolutionDir)Ventana-SFML\image2.png" "$(OutDir)"
 copy "$(SolutionDir)Ventana-SFML\win.png" "$(OutDir)"
 copy "$(SolutionDir)Ventana-SFML\lose.png" "$(OutDir)"
 copy "$(SolutionDir)Ventana-SFML\fondo.png" "$(OutDir)"
-copy "$(SolutionDir)Ventana-SFML\PERTILI.TTF" "$(OutDir)"</Command>
+copy "$(SolutionDir)Ventana-SFML\PERTILI.TTF" "$(OutDir)"
+copy "$(SolutionDir)VLD\bin\Win64" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
